@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar class="alinear">
+    <img src="../../assets/icon/rick-and-morty-logo-png.webp" style="height: 100px;">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="alinear">
+
+  <form [formGroup]="login" (ngSubmit)="enviarDatos()">
+
+    <ion-item>
+      <ion-label>Usuario</ion-label>
+      <input formControlName="usuario" required type="text">
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña</ion-label>
+      <input formControlName="password" required type="password">
+    </ion-item>
+    <ion-button type="submit">Ingresar</ion-button>
+
+  </form>
+
+</ion-content>

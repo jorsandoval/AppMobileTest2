@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar class="alinear">
+    <img
+      src="../../assets/icon/rick-and-morty-logo-png.webp"
+      style="height: 100px"
+    />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img alt="Imagen del usuario" src="{{this.userLocal.image}}" />
+
+    <ion-card-content>
+      <!-- <ion-item>
+        <ion-label>Edad: </ion-label>
+        <p>{{this.userLocal.edad}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Correo: </ion-label>
+        <p>{{this.userLocal.correo}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Universo: </ion-label>
+        <p>{{this.userLocal.universo}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>N° Favoritos: </ion-label>
+        <p>{{this.contador}}</p>
+      </ion-item> -->
+      <form [formGroup]="user" (ngSubmit)="actualizarDatos()">
+        <ion-item>
+          <ion-label>Usuario</ion-label>
+          <input formControlName="username" type="text" />
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellido</ion-label>
+          <input formControlName="apellido" type="text" />
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo</ion-label>
+          <input formControlName="correo" disabled type="text" />
+        </ion-item>
+        <ion-item>
+          <ion-label>Universo</ion-label>
+          <input formControlName="universe" type="text" />
+        </ion-item>
+        <ion-item>
+          <ion-label>N° Favoritos: </ion-label>
+          <input formControlName="favorite" disabled type="text" />
+        </ion-item>
+        <ion-button type="submit">Actualizar</ion-button>
+        <ion-button [routerLink]="['/inicio']"> Volver </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

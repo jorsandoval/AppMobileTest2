@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="alinear">
+    <img src="../../assets/icon/rick-and-morty-logo-png.webp" style="height: 100px;">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="small">Personajes de Rick & Morty</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-row class="ion-align-self-start">
+    <ion-col size="12" style="text-align: center;">
+      <ion-button  [routerLink]="['/inicio']"> Volver </ion-button>
+    </ion-col>
+    <ion-col size="6" size-sm *ngFor="let a of this.dataAPI">
+      <div (click)="characterInfo(a.id)">
+        <ion-card>
+          <img src="{{a.image}}" />
+          <ion-card-header> {{a.name}} </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-col>{{a.species}}</ion-col>
+              <ion-col>
+                <ion-icon *ngIf="validateFavorite(a.id) === 0" name="person-add-outline"></ion-icon>
+                <ion-icon *ngIf="validateFavorite(a.id) > 0" name="person-remove"></ion-icon>
+              </ion-col>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <ion-button *ngIf="this.pageId >= 2" (click)="previewPage()" expand="full"> Retroceder </ion-button>
+      </ion-col>
+      <ion-col style="text-align: center;">
+        <ion-button *ngIf="this.pageId <= 41"(click)="nextPage()" expand="full"> Avanzar </ion-button>
+      </ion-col>
+    </ion-row>
+
+</ion-content>

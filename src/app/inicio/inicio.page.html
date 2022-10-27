@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="alinear">
+    <img
+      src="../../assets/icon/rick-and-morty-logo-png.webp"
+      style="height: 100px"
+    />
+  </ion-toolbar>
+</ion-header>
+<ion-content class="alinear">
+  <ion-card class="alinear">
+    <ion-card-header>
+      <ion-card-title>MENÚ</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start" style="text-align: center">
+            <ion-icon name="list-outline" size="large"></ion-icon>
+          </ion-thumbnail>
+          <p>
+            <ion-button fill="clear" [routerLink]="['/home/1']"
+              >PERSONAJES</ion-button
+            >
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start" style="text-align: center">
+            <ion-icon name="bookmarks-outline" size="large"> </ion-icon>
+          </ion-thumbnail>
+          <p>
+            <ion-button fill="clear" [routerLink]="['/favorite-list']"
+              >SELECCIONADOS</ion-button
+            >
+          </p>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start" style="text-align: center">
+            <ion-icon name="person-outline" size="large"></ion-icon>
+          </ion-thumbnail>
+          <p>
+            <ion-button fill="clear" [routerLink]="['/usuario']"
+              >PERFIL</ion-button
+            >
+          </p>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-thumbnail slot="start" style="text-align: center">
+            <ion-icon
+              name="close-circle-outline"
+              size="large"
+              class="ion-align-items-center"
+            ></ion-icon>
+          </ion-thumbnail>
+          <p>
+            <ion-button fill="clear" (click)="logout()">CERRAR</ion-button>
+          </p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

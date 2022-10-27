@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar class="alinear">
+    <img src="../../assets/icon/rick-and-morty-logo-png.webp" style="height: 100px;">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button [routerLink]="['/home']">
+    Volver
+  </ion-button>
+  <ion-header collapse="condense">
+    <!--<ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>-->
+  </ion-header>
+  <ion-card (click)="volverHome()" >
+    <img src="{{dataAPI2.image}}" class="alinear"/>
+    <ion-card-header>
+      <ion-card-title>{{dataAPI2.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Genero</ion-label>
+        <p>{{ dataAPI2.gender }}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Estado</ion-label>
+        <p>{{ dataAPI2.status }}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Especie</ion-label>
+        <p>{{ dataAPI2.species }}</p>
+      </ion-item>
+      <ion-item>
+        <ion-label>Apariciones</ion-label>
+        <p>{{ dataAPI2.episodeLength }}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

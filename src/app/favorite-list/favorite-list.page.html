@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="alinear">
+    <img src="../../assets/icon/rick-and-morty-logo-png.webp" style="height: 100px;">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button [routerLink]="['/inicio']"> Volver </ion-button>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="small">Personajes de Rick & Morty</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-row class="ion-align-self-start">
+    <ion-col size="6" size-sm button="true;" *ngFor="let a of this.dataDB">
+      <div>
+        <ion-card>
+          <img src="{{a.image}}" />
+          <ion-card-header> <p>{{a.name}}</p></ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>{{a.species}}</ion-row>
+              <ion-row>{{a.gender}}</ion-row>
+              <ion-row>{{a.status}}</ion-row>
+              <ion-row>{{a.type}}</ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>
